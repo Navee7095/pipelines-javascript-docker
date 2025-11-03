@@ -30,9 +30,9 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
+        arguments: '--platform linux/amd64'   # ✅ Correct syntax
         tags: |
           $(tag)
-        **arguments: '--platform linux/amd64'**   # ✅ Added this line to fix architecture mismatch
         
     - upload: manifests
       artifact: manifests
