@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: naveepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: naveepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: naveepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: naveepipelinesjavascriptdocker 
+          image: navicontainerregistry.azurecr.io/naveepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
